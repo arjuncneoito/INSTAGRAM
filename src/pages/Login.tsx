@@ -13,8 +13,10 @@ import LeftArrow from '../assets/Svg/Icons/leftarrow.svg';
 import LoginButton from '../componets/buttons/Login.button';
 import {C} from '../constants';
 import FacebookLogo from '../assets/Svg/Logo/facebook.Logo/FaceBook.svg';
+import {useNavigation} from '@react-navigation/native';
 
 export default function Login() {
+  const navigation = useNavigation();
   return (
     <View style={t.flex1}>
       <View style={[t.flex1, t.pX4]}>
@@ -23,7 +25,10 @@ export default function Login() {
           backgroundColor={'white'}
           barStyle="dark-content"
         />
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('Home');
+          }}>
           <LeftArrow />
         </TouchableOpacity>
         <View style={[t.flex1, t.itemsCenter, t.justifyCenter]}>

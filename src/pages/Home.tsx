@@ -12,8 +12,10 @@ import {t} from 'react-native-tailwindcss';
 import InstaLogo from '../assets/Svg/Logo/insta.Logo/instaLogo.svg';
 import {C} from '../constants';
 import LoginButton from '../componets/buttons/Login.button';
+import {useNavigation} from '@react-navigation/native';
 
 export default function Home() {
+  const navigation = useNavigation();
   return (
     <View style={[t.flex1]}>
       <StatusBar
@@ -29,11 +31,13 @@ export default function Home() {
         <View style={t.w10_12}>
           <LoginButton />
         </View>
-        <TouchableHighlight>
-          <Text style={[t.m6, {color: C.colors.primaryblue}]}>
-            Switch accounts
-          </Text>
-        </TouchableHighlight>
+        <TouchableOpacity
+          style={t.m6}
+          onPress={() => {
+            navigation.navigate('Login');
+          }}>
+          <Text style={[{color: C.colors.primaryblue}]}>Switch accounts</Text>
+        </TouchableOpacity>
       </View>
       <View
         style={[

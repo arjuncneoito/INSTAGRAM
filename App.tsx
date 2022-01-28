@@ -1,8 +1,6 @@
-import {StyleSheet} from 'react-native';
 import React from 'react';
-import Home from './src/pages/Home';
-import Login from './src/pages/Login';
+import HomeStack from './src/routes/stackRoute/StackRoutes';
 
 export default function App() {
-  return <Login />;
+  return <HomeStack />;
 }
